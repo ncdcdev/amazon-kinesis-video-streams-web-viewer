@@ -158,7 +158,7 @@ available fragments and request the next media stream. To avoid this, use Live M
 **Can I refresh the Kinesis Video Streams list?**  
 Yes, instead of taking real-estate on the UI with a refresh button, you can just re-select the AWS Region and the Kinesis Video Streams list will be updated.  
 
-## FAQS: For the Developers:
+## FAQs: For the Developers:
 
 **How is media requested from Amazon Kinesis Video Streams and rendered in the user interface?**  
 This application requests and displays the Amazon Kinesis Video Streams media via a [HLS URL request](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_GetHLSStreamingSessionURL.html). The application requests a HLS URL from Amazon Kinesis Video Streams and plays in the browser using [React-Player](https://www.npmjs.com/package/react-player) 

@@ -215,8 +215,14 @@ export default function KvsPlayerStats(props) {
           </Typography>
 
           <Typography variant="body2" sx={{ mb: 2 }}>
+           <strong>Can I fine tune he HLS.js media player configurations like buffer and latency settings?</strong><br />
+            Yes, the full HLS.js config is injected into the application from the <strong>src/assets/data/hlsConfigs.js</strong> properties file. 
+            Details of the HLS.js config can be found in the <a href="https://github.com/video-dev/hls.js/blob/master/docs/API.md#fine-tuning" target="_blank">HLS.js API fine-tuning page</a> 
+          </Typography>
+
+          <Typography variant="body2" sx={{ mb: 2 }}>
             <strong>Can I customise or use this application in my own project?</strong><br />
-            Yes, this application is released under the MIT open-source license. Subject to the requirements of that license, you may 
+            Yes, this application is released under the MIT-0 open-source license. Subject to the requirements of that license, you may 
             use and modify the source code for your own requirements. The source code and how to deploy is detailed in the project GIT Repository.
             
             <br /><br />
