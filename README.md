@@ -35,7 +35,7 @@ You will also need:
 
 1) **Clone the Kinesis Video Stream Web Viewer Project:**
 ```
-git clone git@github.com:aws-samples/amazon-kinesis-video-streams-web-viewer.git
+git clone https://github.com/aws-samples/amazon-kinesis-video-streams-web-viewer.git
 cd amazon-kinesis-video-streams-web-viewer
 ```
 
