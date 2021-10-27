@@ -2,7 +2,7 @@
 
 The Amazon Kinesis Video Streams Web Viewer is an AWS hosted web application with authenticated access to display and view AWS Kinesis Video Streams. 
 
-A live demonstration of this solution is available at: https://master.dguf2vw5lyu9n.amplifyapp.com/
+A live demonstration of this application is available at: https://master.dguf2vw5lyu9n.amplifyapp.com/
 
 **Amazon Kinesis Video Stream Web Viewer:**
 ![KVS Web Viewer Screen-Shot](git-readme-assets/kvs-viewer-screenshot.png)
@@ -25,7 +25,7 @@ The following procedure assumes you are on a supported Linux or MacOS device and
 * NPM: v6.13.x or greater
 * Git: v2.23.0 or greater
 
-You Will also need:
+You will also need:
 * Access to an AWS Account: [Create and Activate a new AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
 * AWS credential profile configured: [Configure CLI Credential File](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
 
@@ -37,9 +37,10 @@ git clone git@github.com:aws-samples/amazon-kinesis-video-streams-web-viewer.git
 cd amazon-kinesis-video-streams-web-viewer
 ```
 
-2) ** Install the application dependencies and build the project:**
+2) **Install the application dependencies and update / fix as needed:**
 ```
 npm install
+npm audit fix
 ```
 
 3) **Install AWS Amplify:**
@@ -61,7 +62,7 @@ amplify init
 ? Select the authentication method you want to use: **AWS profile**  
 ? Please choose the profile you want to use: **[Select Preferred AWS Profile]**  
 
-**Note:** Ensure the selected profile has a nominated AWS Region to determine where the application will be deployed.   
+**Note:** Ensure the selected profile has a default AWS Region specified to determine where the application will be deployed. 
 
 5) **Add AWS Cognito Backed User Authentication:**
 ```
@@ -126,4 +127,4 @@ Go to the URL that was generated earlier, you will see a Sign on / Sign Up page:
 * Follow the instructions and validate your e-mail address. This will be registered in AWS Cognito.
 * Log into the console and you will now be in the Amazon Kinesis Video Stream Web Viewer. Follow the Quick-Start guide there to access Kinesis Video Streams media in the web application.
 
-**Note:** At any time you need to find the URL again just visit the AWS Amplify Console in your region and select the **kvs-web-viewer** project that was created for you.
+**Note:** At any time you need to find the URL again just visit the AWS Amplify Console in your region and select the **KvsWebViewer** project that was created for you.
