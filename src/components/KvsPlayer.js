@@ -4,11 +4,14 @@
 import React from 'react'
 import { Grid } from '@mui/material';
 import ReactPlayer from 'react-player/lazy'
+import { hlsConfig } from '../assets/data/hlsConfigs'
 
 export default function KvsPlayer(props) {
 
   const { hlsUrl, isPlaying, playbackRate, updatePlayerRef, handleMediaProgress } = props;
 
+  // console.log('HLS CONFIGS: ')
+  // console.log(hlsConfig);
 
   // Create empty ref component to attach to this ReactPlayer.
   const playerRef = React.createRef();
@@ -39,12 +42,9 @@ export default function KvsPlayer(props) {
         progressInterval={500}
         width='100%'
         height='100%'
-        config={{
-          file: {
-            hlsOptions: { 
-              liveSyncDurationCount: 2,
-              liveMaxLatencyDurationCount: 3 
-              }
+        config={{ 
+          file: { 
+            hlsOptions: hlsConfig
           }
         }}
       />
