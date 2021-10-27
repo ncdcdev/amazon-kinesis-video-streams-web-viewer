@@ -2,7 +2,9 @@
 
 The Amazon Kinesis Video Streams Web Viewer is an AWS hosted web application with authenticated access to display and view AWS Kinesis Video Streams. 
 
-A live demonstration of this application is available at: https://master.dguf2vw5lyu9n.amplifyapp.com/
+A live demonstration of this application is available at: https://dev.d1c69kb8wg9cq7.amplifyapp.com/
+* User authentication is enabled so you will need to complete the Sign-Up procedure to gain access.
+* Demonstration test video sources are available to view by selecting the **us-east-1** region
 
 **Amazon Kinesis Video Stream Web Viewer:**
 ![KVS Web Viewer Screen-Shot](git-readme-assets/kvs-viewer-screenshot.png)
@@ -37,10 +39,9 @@ git clone git@github.com:aws-samples/amazon-kinesis-video-streams-web-viewer.git
 cd amazon-kinesis-video-streams-web-viewer
 ```
 
-2) **Install the application dependencies and update / fix as needed:**
+2) **Install the application dependencies:**
 ```
 npm install
-npm audit fix
 ```
 
 3) **Install AWS Amplify:**
@@ -57,12 +58,12 @@ amplify init
 
 **Provide the below responses to the initialization questions:**
 
+**Note:** In the below, ensure the selected **AWS profile** has a default AWS Region specified to determine where the application will be deployed. 
+
 ? Enter a name for the project: **KvsWebViewer**  
-? Initialize the project with the above configuration? **Yes**  
+? Initialize the project with the above configuration? **Y**  
 ? Select the authentication method you want to use: **AWS profile**  
 ? Please choose the profile you want to use: **[Select Preferred AWS Profile]**  
-
-**Note:** Ensure the selected profile has a default AWS Region specified to determine where the application will be deployed. 
 
 5) **Add AWS Cognito Backed User Authentication:**
 ```
@@ -97,14 +98,16 @@ amplify publish
  
 ? Are you sure you want to continue? **Yes**  
 
-### You are nearly there!
-At this point, AWS Amplify will build the project files, publish them to be publicly hosted in AWS and will deploy and configure AWS Cognito to provide Identity management and resource access. This process can take a number of minutes to complete.   
+### You're nearly there!
+At this point, AWS Amplify has built the project files, publish them to be publicly hosted in AWS and will deploy and configure AWS Cognito to provide identity management and resource access. This process can take a few minutes to complete.   
 
-When done, you will see a message similar to the below:  
+When done, you will see a message similar to the below:
+```
 Deployment Complete!  
-https://dev.123456abcdef.amplifyapp.com  
+https://dev.123456abcdef.amplifyapp.com
+```
 
-The URL provided is the public address of your hosted Amazon Kinesis Video Stream Web Viewer application. Record the URL, we will need it in a bit. 
+The URL provided is the public address of your hosted Amazon Kinesis Video Stream Web Viewer application. Record the URL, we will need it after just a few more steps. 
 
 ### Update the AWS Cognito Authenticated Role.
 
@@ -112,7 +115,7 @@ AWS Amplify deployed an AWS Cognito instance with an Authenticated IAM Role that
 
 1) Open the [Amazon IAM Roles Console](https://console.aws.amazon.com/iamv2/home?#/roles) 
 * Search for the role that is similar to **amplify-kvswebviewer-dev-123456-authRole** and click on it.
-    * Note, don't select the similar role ending with **-idp**.
+    * **Note:** don't select the similar role ending with **-idp**.
 * Click **Attach policies** and select **AmazonKinesisVideoStreamsReadOnlyAccess** policy.
 * Click **Attach Policy** to confirm. 
 
@@ -127,4 +130,4 @@ Go to the URL that was generated earlier, you will see a Sign on / Sign Up page:
 * Follow the instructions and validate your e-mail address. This will be registered in AWS Cognito.
 * Log into the console and you will now be in the Amazon Kinesis Video Stream Web Viewer. Follow the Quick-Start guide there to access Kinesis Video Streams media in the web application.
 
-**Note:** At any time you need to find the URL again just visit the AWS Amplify Console in your region and select the **KvsWebViewer** project that was created for you.
+**Note:** At any time you need to find the URL again just visit the AWS [Amplify Console](https://console.aws.amazon.com/amplify/) in your region and select the **KvsWebViewer** project that was created for you.
