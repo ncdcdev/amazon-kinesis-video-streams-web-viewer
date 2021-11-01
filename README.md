@@ -99,8 +99,10 @@ amplify publish
  
 ? Are you sure you want to continue? **Yes**  
 
+**Note:** This process can take a few minutes to complete. 
+
 ### You're nearly there!
-At this point, AWS Amplify has built the project files, published them to be hosted in AWS and will deploy and configure AWS Cognito to provide identity management and resource access. This process can take a few minutes to complete.   
+At this point, AWS Amplify has built the project files, published them to be hosted in AWS and will deploy and configure AWS Cognito to provide identity management and resource access.   
 
 When done, you will see a message similar to the below:
 ```
@@ -123,14 +125,45 @@ AWS Amplify deployed an AWS Cognito instance with an Authenticated IAM Role that
 
 ![Update Auth Role](git-readme-assets/idm-auth-role-update.png)
 
+### Add Authenticated User Credentials.
+AWS Amplify has the ability to provide an automated user Sign-Up experience to 
+add new authenticated users to the application. In this case however, we don't want to manage or expose the user Sign-Up capability to the public Internet so instead, we will manually add an initial Admin user in the Amazon Cognito User Pool created for this application.
+
+* Go to the [Amazon Cognito Console](https://console.aws.amazon.com/cognito) and select the AWS region you deployed this project in.
+`* Region is determined by the default region of the AWS User Profile selected previously.
+* Click on **Manage User Pools** and select the User Pool created for this project (that starts with **kvswebviewer**).
+* In the User Pool, select **Users and Groups** from the menu on the left then click **Create User**.
+* Add the:
+    * **Username:** Enter a username (must be a valid email address),
+    * Select the **Send an invitation to this new user?** and **Email** check boxes,
+    * **Temporary password**: Leave blank, this will cause the system to generate one and attach to the welcome email. 
+        * Consider this in line with your security objectives for this deployment,
+    * **Phone Number**: Leave blank and uncheck the **Mark phone number as verified?**
+    * **Email:** Enter your valid email address.
+    * Uncheck **Mark email as verified**
+
+Your Create User dialog should look similar as below, click **Create User**
+
+![Create Cognito User](git-readme-assets/create-cognito-user.png)
+
+In the above, we manually created user credentials that will be provided with the Kinesis Video Streams ReadOnly permissions associated with the Authenticated IAM Role we applied in the previous step. We configured the process to self-generate a temporary password and require the user to validate the email address and update their 
+password prior to gaining access. Repeat this step for any additional users that require access. 
+
 ### And That’s it!
-Go to the URL that was generated earlier, you will see a Sign on / Sign Up page:
 
-![Sign In / Sign Up](git-readme-assets/create-account.png)
+* You will receive an email from: **no-reply@verificationemail.com**  with your username and a temporary password. 
+* Go to the URL that was generated earlier, you will see a Sign In page:
 
-* Click **Create Account** in the first instance to Sign Up as new user.
-* Follow the instructions and validate your e-mail address. This will be registered in AWS Cognito.
-* Log into the console and you will now be in the Amazon Kinesis Video Stream Web Viewer. Follow the Quick-Start guide there to access Kinesis Video Streams media in the web application.
+![Sign In](git-readme-assets/signin.png)
+
+* Sign in using the temporary credentials provided and follow the steps to update your password,
+* Follow the procedure to validate your email address: 
+    * Click Validate and leave your browser open, a verification code will be sent.
+    * Enter the verification code and click **Submit**.
+
+**Congratulations!** 
+You will now be  redirected to the Amazon Kinesis Video Streams Viewer application with secure ReadOnly access applied to 
+view the Amazon Kinesis Video Streams in your AWS Account.
 
 **Note:** At any time you need to find the URL again just visit the AWS [Amplify Console](https://console.aws.amazon.com/amplify/) in your region and select the **KvsWebViewer** project **Frontend Environments** that was created for you.
 

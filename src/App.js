@@ -8,7 +8,7 @@ import { SnackbarProvider } from 'notistack';
 import { Button } from '@mui/material';
 import Layout from './layouts/Layout';
 
-import { withAuthenticator } from '@aws-amplify/ui-react'
+import { AmplifyAuthenticator, AmplifySignIn } from "@aws-amplify/ui-react";
 
 
 const theme = createTheme({
@@ -36,12 +36,17 @@ function App() {
         }}
         maxSnack={3}
       >
-        <Router>
-          <Layout />
-        </Router>
+
+        <AmplifyAuthenticator>
+          <AmplifySignIn slot="sign-in" hideSignUp></AmplifySignIn>
+          <Router>
+            <Layout />
+          </Router>
+        </AmplifyAuthenticator>
+
       </SnackbarProvider>
     </ThemeProvider>
   );
 }
 
-export default withAuthenticator(App)
+export default App
