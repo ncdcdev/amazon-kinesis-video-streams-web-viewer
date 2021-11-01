@@ -123,8 +123,18 @@ AWS Amplify deployed an AWS Cognito instance with an Authenticated IAM Role that
 
 ![Update Auth Role](git-readme-assets/idm-auth-role-update.png)
 
+### Manually Add Initial User Credentials.
+AWS Amplify used to build and deploy this project has the ability to provide an on-line user Sign-Up experience to 
+add new credentials to the application. In this case however, we don't want to manage or expose the user Sign-Up capability to the Internet so will instead add an initial user manually in the Amazon Coginto User Pool created for this application.
+
+* Go to  the [Amazon Coginto Console](https://.console.aws.amazon.com/cognito) and select the AWS region you deployed this project in. 
+* Click on **Manage User Pools** and select the User Pool created for this project that starts with **kvswebviewer**
+* In the User Pool, select **Users and Groups** from the menu on the left then click **Create User**
+* Add the:
+    * Username (must be a valid email address)
+
 ### And That’s it!
-Go to the URL that was generated earlier, you will see a Sign on / Sign Up page:
+Go to the URL that was generated earlier, you will see a Sign In page:
 
 ![Sign In / Sign Up](git-readme-assets/create-account.png)
 
