@@ -177,7 +177,7 @@ export default function KvsPlayerFrame(props) {
     // if On-Demand and rewind past start then request a new 
     // Stream at 1/2 max fragements in past and reset player start
     // time to what was requested.
-    if (streamModeState === 'ON_DEMAND' && seekToPlayerTime < 0) {
+    if ((streamModeState === 'ON_DEMAND') && seekToPlayerTime < 0) {
 
       const fragDuration = mediaStats.fragDuration;
       const maxFrags = 1000
@@ -295,7 +295,7 @@ export default function KvsPlayerFrame(props) {
 
     } catch (error) {
 
-      console.log('GET API REQUESR ERRROR:');
+      console.log('GET API REQUEST ERRROR:');
       console.log(error);
 
       // Get HLS URL request fails.\, try again up to maxRetryHlsUrlRequest times

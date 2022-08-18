@@ -21,9 +21,18 @@ import {
 
 import { makeStyles } from '@material-ui/core'
 
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import DateTimePicker from '@mui/lab/DateTimePicker';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
+// AdapterDateFns moved from @mui/lab
+//import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
+
+// DateTimePicker moved from @mui/lab
+//import DateTimePicker from '@mui/lab/DateTimePicker';
+//import DateTimePicker from '@mui/x-date-pickers/DateTimePicker';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker'
+
+// LocalizationProvider moved from @mui/lab
+//import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 const useStyles = makeStyles((theme) => {
@@ -96,6 +105,12 @@ export default function KvsPlayerStreamSelector(props) {
               key={`item-mode-live`}
               value={'LIVE'}
             > Live
+            </MenuItem>
+
+            <MenuItem
+              key={`item-mode-live`}
+              value={'LIVE_REPLAY'}
+            > Live-Replay
             </MenuItem>
 
             <MenuItem
