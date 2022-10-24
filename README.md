@@ -2,12 +2,8 @@
 
 The Amazon Kinesis Video Streams Web Viewer is an AWS hosted web application with authenticated access to display and view AWS Kinesis Video Streams. 
 
-A live demonstration of this application is available at: https://dev.d1c69kb8wg9cq7.amplifyapp.com/
-* User authentication is enabled so you will need to complete the Sign-Up procedure to gain access.
-* Demonstration test video sources are available to view by selecting the **us-east-1** region
-
 **Amazon Kinesis Video Stream Web Viewer:**
-![KVS Web Viewer Screen-Shot](git-readme-assets/kvs-viewer-screenshot.png)
+![KVS Web Viewer Screen-Shot](git-readme-assets/kvs-viewer-screenshot-vids.png)
 
 **Supported Features:**
 * Managed user authentication and access (Backed by AWS Cognito),
