@@ -76,6 +76,8 @@ export default function KvsPlayerController(props) {
               onChange={handlePlaybackRateChanged}
             >
               <MenuItem value={1}>x1</MenuItem>
+              <MenuItem value={1.05}>x1.05</MenuItem>
+              <MenuItem value={1.1}>x1.1</MenuItem>
               <MenuItem value={1.2}>x1.2</MenuItem>
               <MenuItem value={1.5}>x1.5</MenuItem>
               <MenuItem value={2}>x2</MenuItem>
